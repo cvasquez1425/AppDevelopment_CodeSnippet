@@ -15,6 +15,11 @@ namespace Bootstrap.Controllers
             return View();
         }
 
+        public ActionResult BootstrapAccordion()
+        {
+            return View();
+        }
+
         // GET: Bootstrap
         public ActionResult Index()
         {

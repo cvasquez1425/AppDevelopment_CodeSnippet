@@ -269,3 +269,17 @@ a.btn-u-xs {
 /*.carousel{
     padding-top:20px;
 }*/
+
+/*
+    Styling the new Anchor Element from Paul D. Sheriff Extending The Bootstrap Accordion. Feb 2015
+    You remove the text-decoration from the anchor, float it to the right, and ensure that the cursor becomes a pointer when the user hovers over it.
+*/
+.panel > .panel-heading > .panel-title > a {
+    text-decoration: none
+}
+
+.pdsa-panel-toggle {
+    float:right;
+    cursor: pointer;
+}
+
