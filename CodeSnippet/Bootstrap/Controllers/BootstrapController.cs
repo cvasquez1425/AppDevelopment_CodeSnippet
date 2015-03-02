@@ -8,6 +8,11 @@ namespace Bootstrap.Controllers
 {
     public class BootstrapController : Controller
     {
+        // Displaying a Wait Message on an MVC Page
+        public ActionResult WaitMessage()
+        {
+            return View();
+        }
 
         //Customization Code Snippet Project
         public ActionResult Accordion()
