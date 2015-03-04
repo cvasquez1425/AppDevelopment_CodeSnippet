@@ -59,6 +59,7 @@
 <script type="text/javascript">
 
     function DisplayProgressMessage(ctl, msg) {
+        debugger;
         $(ctl).prop("disabled", true);
         $(ctl).text(msg);
         $(".submit-progress").removeClass("hidden");
@@ -70,7 +71,7 @@
 
 @section scripts{
     <script>
-        $(document).ready () {
+        $(document).ready (function() {
             // Connect to any elements that have 'data-pdsa-action'
             $("[data-pdsa-action").on("click", function (event) {
                 event.preventDefault();
@@ -81,6 +82,6 @@
                 //Submit for with values filled in 
                 $("form").submit();
             });
-        };
+        });
     </script>
 }

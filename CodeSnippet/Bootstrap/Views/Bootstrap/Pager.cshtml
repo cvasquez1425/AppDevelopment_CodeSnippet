@@ -25,7 +25,7 @@
                     <a href="#" title="Previous Page">Prev</a>
                 </li>
                 <li class="active">
-                    <a href="#" title="Page 1">1</a>
+                    <a href="#" data-pdsa-action="Active" id="pagerId" title="Page 1">1</a>
                 </li>
                 <li>
                     <a href="#" title="Page 2">2</a>
@@ -60,7 +60,8 @@
 
                 // store the last sort expression
                 $("#lastSortExpression").val($("#SortExpression").val());
-
+                $("#pagerId").val($(this).attr("data-pdsa-action"));
+                debugger
                 //Submit for with values filled in
                 $("form").submit();
             });
