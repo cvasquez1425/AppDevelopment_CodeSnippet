@@ -66,5 +66,21 @@
         return true;
     };
 
-    //});
 </script>
+
+@section scripts{
+    <script>
+        $(document).ready () {
+            // Connect to any elements that have 'data-pdsa-action'
+            $("[data-pdsa-action").on("click", function (event) {
+                event.preventDefault();
+
+                // store the last sort expression
+                $("#lastSortExpression").val($("#SortExpression").val());
+
+                //Submit for with values filled in 
+                $("form").submit();
+            });
+        };
+    </script>
+}

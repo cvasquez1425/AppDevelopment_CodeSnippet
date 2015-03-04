@@ -215,6 +215,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Bootstrap\BootstrapAccordion.cshtml" />
     <Content Include="Views\Bootstrap\WaitMessage.cshtml" />
+    <Content Include="Views\Bootstrap\Pager.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -8,6 +8,12 @@ namespace Bootstrap.Controllers
 {
     public class BootstrapController : Controller
     {
+        //Displaying Bootstrap Pager
+        public ActionResult Pager()
+        {
+            return View();
+        }
+
         // Displaying a Wait Message on an MVC Page
         public ActionResult WaitMessage()
         {
