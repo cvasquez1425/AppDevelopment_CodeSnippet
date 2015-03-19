@@ -83,8 +83,6 @@ namespace LINQ_Queries
 //            }
 
             // IQueryable Implementatino LINQ to SQL Sample code
-
-
             string ConnectionString = "Data Source=gm-atl-tessdb;Initial Catalog=tess_dev;User ID=sa;Password=t3sspr0d@dm1n;";
             DataContext dataContext = new DataContext(ConnectionString);
             Table<state> states = dataContext.GetTable<state>();
