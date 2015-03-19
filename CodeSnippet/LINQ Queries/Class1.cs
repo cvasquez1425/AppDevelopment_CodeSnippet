@@ -4,6 +4,8 @@ using System.Linq;/// if we remove the using.system.Linq directive from our prog
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Data.Linq;
+using System.Data.Linq.Mapping;
 
 namespace LINQ_Queries
 {
@@ -44,7 +46,76 @@ namespace LINQ_Queries
                 .Where(n => n.Length > 2)
                 .OrderBy(n => n);
 
+
+            // Projection Strategies
+            IEnumerable<TempProjectionItem> temp = from n in names
+                                                   select new TempProjectionItem
+                                                   {
+                                                       Original = n,
+                                                       Vowelless = n.Replace("a", "").Replace("e", "").Replace("i", "")
+                                                                   .Replace("o", "").Replace("u", "")
+                                                   };
+            // the result is of Type IEnumerable<TempProjectionItem>, which we can subsequently query:
+            IEnumerable<string> queryProjection = from item in temp
+                                                  where item.Vowelless.Length > 2
+                                                  select item.Original;
+            //foreach (var item in queryProjection)
+            //{
+            //    Console.WriteLine(item);    // Dick, Harry, Mary
+            //}
+
+            // With Anonymous Types, we can eliminate the TempProjectionItem class
+            // Anonymous types allow you to structure your intemediate results without writing special classes.
+            var intermediate = from n in names
+                               select new
+                               {
+                                   Original = n,
+                                   Vowelless = n.Replace("a", "").Replace("e", "").Replace("i", "")
+                                               .Replace("o", "").Replace("u", "")
+                               };
+
+            //IEnumerable<string> queryAnonymous = from item in intermediate
+            //                                     where item.Vowelless.Length > 2
+            //                                     select item.Original;
+//            foreach (var item in queryProjection)
+//            {
+//                Console.WriteLine(item);    // Dick, Harry, Mary
+//            }
+
+            // IQueryable Implementatino LINQ to SQL Sample code
+
+
+            string ConnectionString = "Data Source=gm-atl-tessdb;Initial Catalog=tess_dev;User ID=sa;Password=t3sspr0d@dm1n;";
+            DataContext dataContext = new DataContext(ConnectionString);
+            Table<state> states = dataContext.GetTable<state>();
+
+            IQueryable<string> queryState = from c in states
+                                            where   c.state_name.Contains("a")
+                                            orderby c.state_name.Length
+                                            select  c.state_name.ToUpper();
+
+            foreach (string name in queryState)
+            {
+                Console.WriteLine(name);
+            }
             Console.ReadKey();
+
         }
     }
+
+
+    [Table] public class state
+    {
+        [Column(IsPrimaryKey=true)] public int state_id;
+        [Column]               public string state_name;
+        [Column]               public string state_code;
+ 
+    }
+
+    public class TempProjectionItem
+    {
+        public string Original { get; set; }
+        public string Vowelless { get; set; }
+    }
+
 }
