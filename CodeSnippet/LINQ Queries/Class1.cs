@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
+using System.IO;
 
 namespace LINQ_Queries
 {
@@ -82,7 +83,7 @@ namespace LINQ_Queries
 //                Console.WriteLine(item);    // Dick, Harry, Mary
 //            }
 
-            // IQueryable Implementatino LINQ to SQL Sample code
+            // IQueryable Implementation LINQ to SQL Sample code
             string ConnectionString = "Data Source=gm-atl-tessdb;Initial Catalog=tess_dev;User ID=sa;Password=t3sspr0d@dm1n;";
             DataContext dataContext = new DataContext(ConnectionString);
             Table<state> states = dataContext.GetTable<state>();
@@ -92,10 +93,36 @@ namespace LINQ_Queries
                                             orderby c.state_name.Length
                                             select  c.state_name.ToUpper();
 
-            foreach (string name in queryState)
+            //foreach (string name in queryState)
+            //{
+            //    Console.WriteLine(name);
+            //}
+
+
+            // Select Subqueries and Object Hierarchies
+            DirectoryInfo[] dirs = new DirectoryInfo(@"c:\Users\u748\Documents").GetDirectories();
+
+            var queryDirs = from d in dirs
+                            where (d.Attributes & FileAttributes.System) == 0
+                            select new
+                                {
+                                    DirectoryName = d.FullName,
+                                    Created = d.CreationTime,
+
+                                    Files = from f in d.GetFiles()        // the inner portion of this query can be called a correlated subquery. it is correlated because it references an object in the outer query -- in this case, it references d.
+                                            where (f.Attributes & FileAttributes.Hidden) == 0
+                                            select new { FileName = f.Name, f.Length, }
+                                };
+
+            foreach (var dirFiles in queryDirs)
             {
-                Console.WriteLine(name);
+                Console.WriteLine("Directory: " + dirFiles.DirectoryName);
+                foreach (var file in dirFiles.Files)
+                {
+                    Console.WriteLine(" " + file.FileName + " Len: " + file.Length);
+                }
             }
+
             Console.ReadKey();
 
         }
