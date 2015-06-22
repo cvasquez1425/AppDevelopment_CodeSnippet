@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq-EntityFramework-part1"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicSite", "MusicSite\MusicSite.csproj", "{A4D44B2A-961A-433F-B940-8CA3CCF7296F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicWebSite", "MusicWebSite\MusicWebSite.csproj", "{B3C41303-D666-44C6-897F-FAB51798FDD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A4D44B2A-961A-433F-B940-8CA3CCF7296F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4D44B2A-961A-433F-B940-8CA3CCF7296F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4D44B2A-961A-433F-B940-8CA3CCF7296F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C41303-D666-44C6-897F-FAB51798FDD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C41303-D666-44C6-897F-FAB51798FDD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C41303-D666-44C6-897F-FAB51798FDD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C41303-D666-44C6-897F-FAB51798FDD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
