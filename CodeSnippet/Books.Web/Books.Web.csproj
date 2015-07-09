@@ -160,11 +160,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DataContexts\BookMigrations\201507082039317_InitialCreateOfDatabase.cs" />
     <Compile Include="DataContexts\BookMigrations\201507082039317_InitialCreateOfDatabase.Designer.cs">
       <DependentUpon>201507082039317_InitialCreateOfDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\BookMigrations\201507091710330_DefaultSchema.cs" />
+    <Compile Include="DataContexts\BookMigrations\201507091710330_DefaultSchema.Designer.cs">
+      <DependentUpon>201507091710330_DefaultSchema.cs</DependentUpon>
     </Compile>
     <Compile Include="DataContexts\BookMigrations\Configuration.cs" />
     <Compile Include="DataContexts\BooksDb.cs" />
@@ -173,10 +178,15 @@
     <Compile Include="DataContexts\IdentityMigrations\201507082036500_InitialCreateOfDatabase.Designer.cs">
       <DependentUpon>201507082036500_InitialCreateOfDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\IdentityMigrations\201507091709436_DefaultSchema.cs" />
+    <Compile Include="DataContexts\IdentityMigrations\201507091709436_DefaultSchema.Designer.cs">
+      <DependentUpon>201507091709436_DefaultSchema.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\IdentityMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\EnumHelpers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -239,6 +249,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplate\Genre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -260,8 +276,14 @@
     <EmbeddedResource Include="DataContexts\BookMigrations\201507082039317_InitialCreateOfDatabase.resx">
       <DependentUpon>201507082039317_InitialCreateOfDatabase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\BookMigrations\201507091710330_DefaultSchema.resx">
+      <DependentUpon>201507091710330_DefaultSchema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\IdentityMigrations\201507082036500_InitialCreateOfDatabase.resx">
       <DependentUpon>201507082036500_InitialCreateOfDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\IdentityMigrations\201507091709436_DefaultSchema.resx">
+      <DependentUpon>201507091709436_DefaultSchema.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
