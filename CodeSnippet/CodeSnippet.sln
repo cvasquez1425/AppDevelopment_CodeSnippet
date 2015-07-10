@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Web", "Books.Web\Book
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Entities", "Books.Entities\Books.Entities.csproj", "{533BA93A-3FB5-42AE-A524-0F7B432EB1B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientData", "PatientData\PatientData.csproj", "{5B6554DD-A051-406D-B5CA-1D72C8F2296B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{533BA93A-3FB5-42AE-A524-0F7B432EB1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{533BA93A-3FB5-42AE-A524-0F7B432EB1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{533BA93A-3FB5-42AE-A524-0F7B432EB1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B6554DD-A051-406D-B5CA-1D72C8F2296B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B6554DD-A051-406D-B5CA-1D72C8F2296B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B6554DD-A051-406D-B5CA-1D72C8F2296B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B6554DD-A051-406D-B5CA-1D72C8F2296B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
