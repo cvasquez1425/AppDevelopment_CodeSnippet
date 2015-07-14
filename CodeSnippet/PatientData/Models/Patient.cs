@@ -7,7 +7,7 @@ using MongoDB.Bson;
 
 namespace PatientData.Models
 {
-    public class PatientData
+    public class Patient
     {
         [BsonElement("_id")]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -24,6 +24,6 @@ namespace PatientData.Models
 
     public class Ailment
     {
-        public int Name { get; set; }
+        public string Name { get; set; }
     }
 }
