@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PatientData.Models
 {
-    class MongoCollection<T>
+    public class MongoCollection<T>
     {
     }
 }
