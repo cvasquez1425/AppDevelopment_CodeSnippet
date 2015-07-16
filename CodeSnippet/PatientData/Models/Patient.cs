@@ -9,6 +9,9 @@ namespace PatientData.Models
 {
     public class Patient
     {
+        /// <summary>
+        /// I just need to tell Mongo to map this its _Id, that is what it looks for in every document that you store in the Mongo Database
+        /// </summary>
         [BsonElement("_id")]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
