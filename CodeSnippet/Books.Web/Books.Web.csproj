@@ -160,6 +160,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Books2Controller.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -255,6 +256,11 @@
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplate\Genre.cshtml" />
+    <Content Include="Views\Books2\Create.cshtml" />
+    <Content Include="Views\Books2\Delete.cshtml" />
+    <Content Include="Views\Books2\Details.cshtml" />
+    <Content Include="Views\Books2\Edit.cshtml" />
+    <Content Include="Views\Books2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
