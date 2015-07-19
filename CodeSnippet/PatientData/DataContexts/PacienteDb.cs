@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pacientes.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace PatientData.Models
 
         }
 
+        public DbSet<Paciente> Pacientes { get; set; }
     }
 }
