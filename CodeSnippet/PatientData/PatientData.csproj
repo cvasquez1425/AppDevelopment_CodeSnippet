@@ -219,6 +219,7 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="DataContexts\PacienteDb.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\PatientDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,6 +292,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pacientes.Entities\Pacientes.Entities.csproj">
+      <Project>{556fdfe5-4238-41fe-ab87-039cb105e649}</Project>
+      <Name>Pacientes.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
