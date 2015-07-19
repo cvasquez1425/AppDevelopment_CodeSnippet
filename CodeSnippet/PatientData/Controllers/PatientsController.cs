@@ -24,5 +24,16 @@ namespace PatientData.Controllers
             return _patients;
         }
 
+
+        public HttpResponseMessage Get(string id)
+        {
+            var patient = _patients.Find(p => p.Id == id);
+            if (patient == null)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Patient not found.");
+            }
+            return Request.CreateResponse(patient);
+        }
+
     }
 }

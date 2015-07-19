@@ -18,6 +18,8 @@ namespace PatientData
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
             // Web API routes
+            // Notice that comes before the default route and that gives any attribute routes that 
+            // you've defined a chance to grab the request before the default route or any other routes
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
