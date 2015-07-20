@@ -18,6 +18,7 @@ namespace PatientData.Controllers
         {
             _patients = PatientDb.Open();
         }
+
         // you'll know that this Get method will respond to a request that comes into /api/patients and it's an Http Get Request
         public IMongoCollection<Patient> Get()
         {

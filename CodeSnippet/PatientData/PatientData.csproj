@@ -211,8 +211,14 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PacientesController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DataContexts\PacienteMigrations\201507191536279_InitialCreatePaciente.cs" />
+    <Compile Include="DataContexts\PacienteMigrations\201507191536279_InitialCreatePaciente.Designer.cs">
+      <DependentUpon>201507191536279_InitialCreatePaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\PacienteMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -298,6 +304,11 @@
       <Project>{556fdfe5-4238-41fe-ab87-039cb105e649}</Project>
       <Name>Pacientes.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataContexts\PacienteMigrations\201507191536279_InitialCreatePaciente.resx">
+      <DependentUpon>201507191536279_InitialCreatePaciente.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

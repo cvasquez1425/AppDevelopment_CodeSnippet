@@ -17,12 +17,14 @@ namespace Pacientes.Entities
 
     public class Medication
     {
-        public string Name { get; set; }
-        public int Doses { get; set; }
+        public int medicationId { get; set; }
+        public string Name      { get; set; }
+        public int Doses        { get; set; }
     }
 
     public class Ailment
     {
-        public string Name { get; set; }
+        public int ailmentId { get; set; }
+        public string Name   { get; set; }
     }
 }
