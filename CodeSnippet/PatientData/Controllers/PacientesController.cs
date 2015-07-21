@@ -26,5 +26,27 @@ namespace PatientData.Controllers
         {
             return _paciente;
         }
+
+        public IHttpActionResult Get(string id)
+        {
+            var paciente = _paciente.FirstOrDefault(p => p.Id.ToString() == id);
+            if (paciente == null)
+            {
+                return NotFound();
+            }
+            return Ok(paciente);
+        }
+
+        [Route("api/pacientes/{id}/medications")]
+        public IHttpActionResult GetMedications(string id)
+        {
+            var paciente = _paciente.FirstOrDefault(p => p.Id.ToString() == id);
+            if (paciente == null)
+            {
+                return NotFound();
+            }
+            return Ok(paciente.Medications);
+        }
+
     }
 }
