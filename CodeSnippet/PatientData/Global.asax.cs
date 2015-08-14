@@ -37,7 +37,7 @@ namespace PatientData
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             // to see the db with some initial data when the application starts up
-            MongoConfig.Seed();
+            //MongoConfig.Seed();
         }
     }
 }

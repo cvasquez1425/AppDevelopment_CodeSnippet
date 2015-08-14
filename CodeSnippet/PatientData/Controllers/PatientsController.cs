@@ -18,10 +18,22 @@ namespace PatientData.Controllers
         {
             _patients = PatientDb.Open();
         }
+
         // you'll know that this Get method will respond to a request that comes into /api/patients and it's an Http Get Request
         public IMongoCollection<Patient> Get()
         {
             return _patients;
+        }
+
+
+        public HttpResponseMessage Get(string id)
+        {
+            var patient = _patients.Find(p => p.Id == id);
+            if (patient == null)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Patient not found.");
+            }
+            return Request.CreateResponse(patient);
         }
 
     }
